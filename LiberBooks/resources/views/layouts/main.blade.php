@@ -7,7 +7,7 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body id="body">
-  @include('partials.navbar')
+  
 
   <main>
     @yield('container')
@@ -15,25 +15,37 @@
   
 
   <script>
-    let btnMenu = document.getElementById("btn-profile")
-    let menu = document.getElementById("profile-menu")
-    let body = document.getElementById("body")
-    menu.style.display = "none"
     
-      btnMenu.addEventListener('click', function(e) {
-        if(menu.style.display === "none") {
-        menu.style.display = "block"
+    let menu = document.getElementById("profile-menu")
+    
+    
+    
+
+    function openProfile() {
+      if(menu.classList.contains("hidden")) {
+        menu.classList.remove("hidden")
+      }else {
+        menu.classList.add("hidden")
       }
-      else {
-        menu.style.display = "none"
+    }
+    
+      window.onclick = function(event) {
+        let btnMenu = document.getElementById("btn-profile")
+        if(!btnMenu.contains(event.target) && !btnMenu.classList.contains("hidden")){
+          menu.classList.add("hidden")
+        }
       }
-      })
-  
-   
-  
-  
   
   </script>
+
+  <script>
+
+    window.onload = function(){
+   document.getElementById('btnModalRegister').click();
+  }
+
+  </script>
+  
   
   </body>
   </html>

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@include('partials.navbar')
 @section('container')
 <div class="pt-10 bg-gray-800 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
   <div class="mx-auto max-w-7xl lg:px-8">

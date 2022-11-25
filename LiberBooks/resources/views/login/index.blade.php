@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@include('partials.navbar')
 @section('container')
 <div class="min-h-full flex">
   <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
@@ -59,13 +59,20 @@
         </div>
 
         <div class="mt-6">
-          <form action="#" method="POST" class="space-y-6">
+          <form action="/login" method="POST" class="space-y-6">
+            @csrf
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700"> Email address </label>
               <div class="mt-1">
-                <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm @error('email') invalid:border-red-900 @enderror" autofocus>
+                @error('email')
+                <div class="invalid-feedback text-red-800 ">
+                  {{ $message }}
+                </div>
+              @enderror
               </div>
             </div>
+            
 
             <div class="space-y-1">
               <label for="password" class="block text-sm font-medium text-gray-700"> Password </label>
