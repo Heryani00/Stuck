@@ -118,7 +118,7 @@
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Privacy </a>
+                <a href="/privacy" class="text-base text-gray-500 hover:text-gray-900"> Privacy </a>
               </li>
 
               <li>
