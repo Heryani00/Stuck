@@ -30,18 +30,19 @@ Route::get('/modal', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/register', function () {
-    return view('register.index');
-});
 
-//register
 
+// register
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
 //dashboard
-
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
+
+// favorite
+Route::get('/favorite', function () {
+    return view('dashboard.favorite');
+});
