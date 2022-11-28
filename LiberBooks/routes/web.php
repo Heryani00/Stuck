@@ -26,6 +26,12 @@ Route::get('/modal', function () {
     return view('component.modal');
 });
 
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -39,6 +45,17 @@ Route::get('/privacy', function () {
 });
 
 //register
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
