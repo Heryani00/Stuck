@@ -36,6 +36,7 @@ Route::get('/categories', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
 Route::get('/redirect', [LoginController::class, 'redirect']);
 Route::get('/callback', [LoginController::class, 'callback']);
 Route::get('/fbRedirect', [LoginController::class, 'fbRedirect']);
@@ -43,16 +44,6 @@ Route::get('/fb/callback', [LoginController::class, 'fbCallback']);
 Route::get('/privacy', function () {
     return view('privacy');
 });
-
-//register
-
-
-
-
-
-
-
-
 
 
 
@@ -62,7 +53,11 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 //dashboard
-
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
+
+// favorite
+Route::get('/favorite', function () {
+    return view('dashboard.favorite');
+});
