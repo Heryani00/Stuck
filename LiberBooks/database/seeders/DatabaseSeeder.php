@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             'facebook_id' => '',
             'email' => 'agung.alfatah43@gmail.com',
             'password' => bcrypt('12345'),
-            'image' => ''
+            'image' => '',
+            'about' => '',
         ]);
 
         User::factory(3)->create();

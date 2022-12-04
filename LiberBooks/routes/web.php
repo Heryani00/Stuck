@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -61,3 +62,8 @@ Route::get('/dashboard', function () {
 Route::get('/favorite', function () {
     return view('dashboard.favorite');
 });
+
+
+//profile
+Route::get('/dashboard/profile/getUser', [ProfileController::class, 'getUser']);
+Route::resource('/dashboard/profile', ProfileController::class)->middleware('auth');
