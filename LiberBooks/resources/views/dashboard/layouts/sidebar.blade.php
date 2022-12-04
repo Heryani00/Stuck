@@ -1,3 +1,11 @@
+<?php
+$user = Auth::user();
+?>
+
+
+
+
+
 <div class="h-full flex">
   <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
   <div class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
@@ -43,13 +51,17 @@
         </nav>
       </div>
       <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-        <a href="#" class="flex-shrink-0 group block">
+        <a href="/profile" class="flex-shrink-0 group block">
           <div class="flex items-start">
             <div class="">
+              @if($user->image)
+              <img class="inline-block  h-10 w-10 rounded-full" src="{{ asset('storage/' . $user->image) }}" alt="">
+              @else
               <img class="inline-block  h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="">
+              @endif
             </div>
             <div class="ml-3">
-              <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">Renandra Rahadian Putri</p>
+              <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">{{ $user->name }}</p>
               <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
               <!-- Button Logout -------------------------------->
               <form action="/logout" method="post">
@@ -107,13 +119,17 @@
         </div>
         <!-- Profil User  --------------------------------->
         <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-          <a href="#" class="flex-shrink-0 w-full group block">
+          <a href="/dashboard/profile" class="flex-shrink-0 w-full group block">
             <div class="flex items-center">
               <div>
-                <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="">
+                @if($user->image)
+                <img class="inline-block  h-10 w-10 rounded-full" src="{{ asset('storage/' . $user->image) }}" alt="">
+                @else
+                <img class="inline-block  h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="">
+                @endif
               </div>
               <div class="ml-3">
-                <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Renandra Rahadian Putri</p>
+                <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">{{ $user->name }}</p>
                 <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
               </div>
             </div>
