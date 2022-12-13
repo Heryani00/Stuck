@@ -6,6 +6,7 @@
   @vite('resources/css/app.css')
   <title>Library Digital</title>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 </head>
 <body id="body">
   
@@ -16,6 +17,7 @@
   
 
   
-  
+  <script src="../path/to/flowbite/dist/flowbite.js"></script>
+  <script defer src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
   </body>
   </html>
