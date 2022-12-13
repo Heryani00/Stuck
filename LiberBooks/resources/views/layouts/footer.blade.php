@@ -1,10 +1,10 @@
-<footer class="bg-gray-50" aria-labelledby="footer-heading">
+<footer class="bg-[#8B7E74]" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="space-y-8 xl:col-span-1">
-        <img class="h-10" src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg" alt="Company name">
-        <p class="text-gray-500 text-base">Making the world a better place through constructing elegant hierarchies.</p>
+        <img class="h-65px w-[65px]" src="http://localhost:8000/assets/img/logo.png" alt="Logo">
+        <p class="text-base text-[#434242] hover:text-white">O-Library</p>
         <div class="flex space-x-6">
           <a href="#" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">Facebook</span>
@@ -45,68 +45,71 @@
       <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
+            <h3 class="text-sm font-semibold text-black-400 tracking-wider uppercase">Tentang LiberalBooks</h3>
             <ul role="list" class="mt-4 space-y-4">
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Marketing </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Tentang Kami </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Analytics </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Analytics </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Commerce </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Commerce </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Insights </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Insights </a>
               </li>
             </ul>
           </div>
           <div class="mt-12 md:mt-0">
-            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+            <h3 class="text-sm font-semibold text-black-400 tracking-wider uppercase">Lainnya</h3>
             <ul role="list" class="mt-4 space-y-4">
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Pricing </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Syarat & Ketentuan </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Documentation </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Kebijakan & Privasi </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Guides </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Bantuan </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> API Status </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Hubungi Kami </a>
               </li>
             </ul>
           </div>
         </div>
         <div class="md:grid md:grid-cols-2 md:gap-8">
           <div>
-            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+            <h3 class="text-sm font-semibold text-black-400 tracking-wider uppercase">Company</h3>
             <ul role="list" class="mt-4 space-y-4">
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> About </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> About </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Blog </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Blog </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Jobs </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Jobs </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Press </a>
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Press </a>
               </li>
 
               <li>
-                <a href="#" class="text-base text-gray-500 hover:text-gray-900"> Partners </a>
+
+                <a href="#" class="text-base text-[#434242] hover:text-white"> Partners </a>
+
+ 
               </li>
             </ul>
           </div>
@@ -130,7 +133,7 @@
       </div>
     </div>
     <div class="mt-12 border-t border-gray-200 py-8">
-      <p class="text-base text-gray-400 xl:text-center">&copy; 2020 Workflow, Inc. All rights reserved.</p>
+      <p class="text-base text-[#434242] hover:text-white xl:text-center">&copy; 2022 LiberBooks, Inc. All rights reserved.</p>
     </div>
   </div>
 </footer>
