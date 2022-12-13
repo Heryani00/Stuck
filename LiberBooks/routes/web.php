@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -26,22 +27,43 @@ Route::get('/modal', function () {
     return view('component.modal');
 });
 
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/register', function () {
-    return view('register.index');
+
+Route::get('/redirect', [LoginController::class, 'redirect']);
+Route::get('/callback', [LoginController::class, 'callback']);
+Route::get('/fbRedirect', [LoginController::class, 'fbRedirect']);
+Route::get('/fb/callback', [LoginController::class, 'fbCallback']);
+Route::get('/privacy', function () {
+    return view('privacy');
 });
 
-//register
+
+
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
 //dashboard
-
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
+
+// favorite
+Route::get('/favorite', function () {
+    return view('dashboard.favorite');
+});
+
+
+//profile
+Route::get('/dashboard/profile/getUser', [ProfileController::class, 'getUser']);
+Route::resource('/dashboard/profile', ProfileController::class)->middleware('auth');
