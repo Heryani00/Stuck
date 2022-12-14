@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-
     content: [
         "./resources/**/*.blade.php",
         "./resources/views/*.blade.php",
@@ -17,8 +16,6 @@ module.exports = {
 
         require("flowbite/plugin"),
 
-        require('@tailwindcss/aspect-ratio'),
-
+        require("@tailwindcss/aspect-ratio"),
     ],
 };
-
