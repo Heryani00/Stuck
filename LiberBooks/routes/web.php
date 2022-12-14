@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DeleteAccountController;
 use App\Http\Controllers\ChangePasswordController;
 
 /*
@@ -75,3 +75,4 @@ Route::resource('/dashboard/profile', ProfileController::class)->middleware('aut
 
 Route::get('/dashboard/setting/change-password', [ChangePasswordController::class, 'index']);
 Route::post('/dashboard/setting/change-password', [ChangePasswordController::class, 'store'])->name('change.password');
+Route::delete('/dashboard/setting/change-password/delete-account', [DeleteAccountController::class, 'destroy'])->name('delete-account');

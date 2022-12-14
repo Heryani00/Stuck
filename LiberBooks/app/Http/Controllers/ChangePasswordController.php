@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
 class ChangePasswordController extends Controller
@@ -31,5 +32,16 @@ class ChangePasswordController extends Controller
         User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
 
         return back()->with('success', 'Password updated successfully');
+    }
+
+
+    public function destroy(User $user)
+    {
+
+        if ($user->image) {
+            Storage::delete($user->image);
+        }
+        User::destroy($user->id);
+        return back()->with('success', 'Account has been deleted');
     }
 }
