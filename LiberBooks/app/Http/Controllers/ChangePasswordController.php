@@ -33,15 +33,4 @@ class ChangePasswordController extends Controller
 
         return back()->with('success', 'Password updated successfully');
     }
-
-
-    public function destroy(User $user)
-    {
-
-        if ($user->image) {
-            Storage::delete($user->image);
-        }
-        User::destroy($user->id);
-        return back()->with('success', 'Account has been deleted');
-    }
 }
