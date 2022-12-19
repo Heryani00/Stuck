@@ -31,19 +31,22 @@
 
         </div>
       </div>
-      <div class="flex items-center">
-        <div class="flex-shrink-0">
-          <a href="/login"><button type="button" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-            <!-- Heroicon name: solid/plus-sm -->
-              <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-            </svg>
-            <span>Log In</span>
-          </button></a>
-        </div>
+      <div class="flex items-center justify-center my-auto">
+        @auth
+          <form action="/logout" method="post" class="pt-4">
+            @csrf
+            <button type="submit" class=" bg-green-300 text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <!-- Heroicon name: solid/plus-sm -->
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Log out</span>
+            </button>
+          </form>
         <div class="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
 
 
           <!-- Profile dropdown -->
+          
           <div class="ml-3 relative">
             <div>
               <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="btn-profile" aria-expanded="false" aria-haspopup="true" onclick="openProfile()">
@@ -61,6 +64,17 @@
             </div>
           </div>
         </div>
+
+        @else
+        <div class="flex-shrink-0">
+          <a href="/login"><button type="button" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <!-- Heroicon name: solid/plus-sm -->
+              <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+            <span>Log In</span>
+          </button></a>
+        </div>
+        @endauth
       </div>
     </div>
   </div>
