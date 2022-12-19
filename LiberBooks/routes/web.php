@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Buku;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -19,8 +21,12 @@ use App\Http\Controllers\ChangePasswordController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'buku' => Buku::paginate(3),
+    ]);
 });
+
+Route::resource('/books', BukuController::class);
 
 
 //modals

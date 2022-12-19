@@ -16,6 +16,9 @@ class BukuController extends Controller
     public function index()
     {
         //
+        return view('books', [
+            'buku' => Buku::latest()->paginate(10),
+        ]);
     }
 
     /**

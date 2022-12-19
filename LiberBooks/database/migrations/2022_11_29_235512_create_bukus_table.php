@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('penerbit');
             $table->date('tahun_terbit');
             $table->string('genre');
+            $table->string('image')->nullable();
             $table->text('deskripsi');
             $table->timestamps();
         });
