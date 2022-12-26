@@ -206,7 +206,7 @@
 
   </div>
   <div class="flex justify-center mt-10">
-    <a href="/books"><button type="button" class=" inline-flex rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">Read More</button></a>
+    <a href="/allbooks"><button type="button" class=" inline-flex rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">Read More</button></a>
   </div>
 </div>
 @include('layouts.footer')
