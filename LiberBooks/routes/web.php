@@ -3,6 +3,8 @@
 use App\Models\Buku;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -25,8 +27,17 @@ Route::get('/', function () {
         'buku' => Buku::paginate(3),
     ]);
 });
+Route::get('/allbooks', function () {
+    return view('books', [
+        'buku' => Buku::latest()->paginate(10),
+    ]);
+});
+
+Route::get('/admin', [AdminController::class, 'index']);
 
 Route::resource('/books', BukuController::class);
+
+
 
 
 //modals
@@ -62,9 +73,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 //dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('auth');
+Route::get('/dashboard', [UserController::class, 'index']);
 
 // favorite
 Route::get('/favorite', function () {
