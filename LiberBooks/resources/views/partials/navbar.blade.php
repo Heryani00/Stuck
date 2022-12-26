@@ -17,7 +17,6 @@
         </div>
         <div class="flex-shrink-0 flex items-center">
           <img class="h-65px w-[65px]" src="http://localhost:8000/assets/img/logo.png" alt="Logo">
-          <h1>O-Library</h1>
         </div>
         <div class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -28,7 +27,6 @@
           <a href="/categories" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Category</a>
 
           <a href="#" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-
         </div>
       </div>
       <div class="flex items-center justify-center my-auto">
