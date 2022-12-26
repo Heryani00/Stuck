@@ -89,12 +89,12 @@ $user = Auth::user();
   <div class="hidden lg:flex lg:flex-shrink-0">
     <div class="flex flex-col w-64">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-orange-300">
+      <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-[#8B7E74]">
         <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
           <!-- Logo Website ------------------------------------>
           <div class="flex items-center flex-shrink-0 px-4">
-            <img class="h-auto w-[100px]" src="http://localhost:8000/assets/logo1.png" alt="Workflow">
-            <h1 class="font-sans hover:font-sans">PERPUSTAKAAN</h1>
+            <img class="h-auto w-[100px]" src="http://localhost:8000/assets/logo.png" alt="Logo">
+            <h1 class="text-2xl font-extrabold tracking-tight">O-Library</h1>
           </div>
           <nav class="mt-5 flex-1" aria-label="Sidebar">
             <div class="px-2 space-y-1">
@@ -120,7 +120,7 @@ $user = Auth::user();
         <!-- Profil User  --------------------------------->
         <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
           <a href="/dashboard/profile" class="flex-shrink-0 w-full group block">
-            <div class="flex items-center">
+            <div class="flex items-start">
               <div>
                 @if($user->image)
                 <img class="inline-block  h-10 w-10 rounded-full" src="{{ asset('storage/' . $user->image) }}" alt="">
@@ -138,7 +138,7 @@ $user = Auth::user();
         <!-- Button Logout -------------------------------->
         <form action="/logout" method="post" class="ml-4">
           @csrf
-          <button type="submit" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
+          <button type="submit" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
             <!-- Heroicon name: solid/plus-sm -->
             <svg class="text-gray-200 group-hover:text-gray-500 mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
