@@ -38,13 +38,13 @@
   
   </script>
 
-  <script>
+<script>
 
-    window.onload = function(){
-   document.getElementById('btnModalRegister').click();
-  }
+  window.onload = function(){
+ document.getElementById('btnModalRegister').click();
+}
 
-  </script>
+</script>
   
   
   </body>

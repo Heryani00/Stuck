@@ -4,6 +4,26 @@
 
 @section('container')
 
+
+<a href="/dashboard/profile/{{ $user->id }}/edit"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+<a href="setting/change-password"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Setting</button>
+
+  @if(session()->has('success'))
+  <div class="alert alert-success col-lg-9" role="alert">
+    {{ session('success') }}
+  </div>
+  @endif
+  
+<form class="space-y-8 divide-y divide-gray-200" action="/profile">
+  @csrf
+  <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+    <div>
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">Profile</h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
+      </div>
+
+
 <div class="">
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="bg-white">

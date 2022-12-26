@@ -1,20 +1,16 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+<div class="bg-[#FEFCF3] min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 hover:bg-[#EDE4E0]">
   <div class="sm:mx-auto sm:w-full sm:max-w-md">
-    <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+    <img class="mx-auto h-auto w-[100px] hover:scale-150" src="http://localhost:8000/assets/img/logo.png" alt="Logo">
     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Registration Form</h2>
-
-
   </div>
 
-  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md ">
+    <div class="bg-[#C7BCA1] py-8 px-4 shadow sm:rounded-lg sm:px-10">
       <form class="space-y-6" action="/register" method="post">
         @csrf
-
-
         <div>
           <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
           <div class="mt-1">
@@ -62,7 +58,7 @@
 
 
         <div>
-          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</button>
+          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#678983] hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Register</button>
         </div>
       </form>
 

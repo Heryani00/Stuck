@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('about')->nullable();
             $table->string('image')->nullable();
+            $table->enum('Type', ['user', 'admin'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
