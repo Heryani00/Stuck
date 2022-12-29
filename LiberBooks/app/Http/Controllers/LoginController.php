@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -69,7 +70,7 @@ class LoginController extends Controller
             'username' => $googleUser->name,
             'email' => $googleUser->email,
             'email_verified_at' => now(),
-            'password' => encrypt('12345'),
+            'password' => Hash::make('12345'),
             'google_token' => $googleUser->token,
             'google_refresh_token' => $googleUser->refreshToken,
         ]);
@@ -89,7 +90,7 @@ class LoginController extends Controller
             'username' => $facebookUser->name,
             'email' => $facebookUser->email,
             'email_verified_at' => now(),
-            'password' => encrypt('12345'),
+            'password' => Hash::make('12345'),
             'facebook_token' => $facebookUser->token,
             'facebook_refresh_token' => $facebookUser->refreshToken,
         ]);

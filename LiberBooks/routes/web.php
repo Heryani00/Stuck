@@ -35,7 +35,8 @@ Route::get('/allbooks', function () {
 
 Route::get('/admin', [AdminController::class, 'index']);
 
-Route::resource('/books', BukuController::class);
+Route::get('/admin/books/getBuku', [BukuController::class, 'getBuku']);
+Route::resource('admin/books', BukuController::class);
 
 
 

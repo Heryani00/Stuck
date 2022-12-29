@@ -184,6 +184,7 @@
               </button>
             </form>
 
+            <a href="admin/books/create">
             <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               <!-- Heroicon name: outline/plus-sm -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -191,6 +192,7 @@
               </svg>
               <span class="sr-only">Add file</span>
             </button>
+            </a>
           </div>
         </div>
       </div>
@@ -235,7 +237,7 @@
               <div class="flex items-center border-b border-gray-200">
                 <nav class="flex-1 -mb-px flex space-x-6 xl:space-x-8" aria-label="Tabs">
                   <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
-                  <a href="#" aria-current="page" class="border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Recently Viewed </a>
+                  <a href="#" aria-current="page" class="border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Book lists </a>
 
                   <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Recently Added </a>
 
@@ -263,37 +265,41 @@
 
           <!-- Gallery -->
           <section class="mt-8 pb-16" aria-labelledby="gallery-heading">
-            <h2 id="gallery-heading" class="sr-only">Recently viewed</h2>
+            <h2 id="gallery-heading" class="sr-only">Book list</h2>
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-              <li class="relative">
+              @foreach ($buku as $b)
+              <li id="kons" class="relative" onclick="detailBuku({{ $b->id }})" >
                 <!-- Current: "ring-2 ring-offset-2 ring-indigo-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500" -->
                 <div class="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
-                  <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover pointer-events-none">
+                  <img data-id="{{ $b->id }}" src="{{ asset('storage/' . $b->image) }}" alt="" class="object-cover pointer-events-none image">
                   <button type="button" class="absolute inset-0 focus:outline-none">
-                    <span class="sr-only">View details for IMG_4985.HEIC</span>
+                    <span class="sr-only">View details for {{ $b->judul }}</span>
                   </button>
                 </div>
-                <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">IMG_4985.HEIC</p>
-                <p class="block text-sm font-medium text-gray-500 pointer-events-none">3.9 MB</p>
+                <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">{{ $b->judul }}</p>
+                <p class="block text-sm font-medium text-gray-500 pointer-events-none">{{ $b->penulis }}</p>
               </li>
 
               <!-- More files... -->
+              @endforeach
             </ul>
           </section>
         </div>
       </main>
 
       <!-- Details sidebar -->
-      <aside class="hidden w-96 bg-white p-8 border-l border-gray-200 overflow-y-auto lg:block">
+      <aside id="info" class="hidden w-96 bg-white p-8 border-l border-gray-200 overflow-y-auto">
+        <button onclick="closeInfo()" id="btn-close" class="btn-close bg-yellow-300">hahahahah</button>
         <div class="pb-16 space-y-6">
           <div>
             <div class="block w-full aspect-w-10 aspect-h-7 rounded-lg overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover">
+              {{-- <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover"> --}}
+              <img id="buku-image" src="{{ asset('storage/1.jpg') }}" alt="" class="object-cover">
             </div>
             <div class="mt-4 flex items-start justify-between">
               <div>
-                <h2 class="text-lg font-medium text-gray-900"><span class="sr-only">Details for </span>IMG_4985.HEIC</h2>
+                <h2 id="buku-judul" class="text-lg font-medium text-gray-900"></h2>
                 <p class="text-sm font-medium text-gray-500">3.9 MB</p>
               </div>
               <button type="button" class="ml-4 bg-white rounded-full h-8 w-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -309,47 +315,82 @@
             <h3 class="font-medium text-gray-900">Information</h3>
             <dl class="mt-2 border-t border-b border-gray-200 divide-y divide-gray-200">
               <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Uploaded by</dt>
-                <dd class="text-gray-900">Marie Culver</dd>
+                <dt class="text-gray-500">Penulis</dt>
+                <dd id="buku-penulis" class="text-gray-900"></dd>
               </div>
 
               <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Created</dt>
-                <dd class="text-gray-900">June 8, 2020</dd>
+                <dt class="text-gray-500">Uploaded at</dt>
+                <dd id="created_at" class="text-gray-900"></dd>
               </div>
 
               <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Last modified</dt>
-                <dd class="text-gray-900">June 8, 2020</dd>
+                <dt class="text-gray-500">Penerbit</dt>
+                <dd id="buku-penerbit" class="text-gray-900"></dd>
               </div>
 
               <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Dimensions</dt>
-                <dd class="text-gray-900">4032 x 3024</dd>
+                <dt class="text-gray-500">Tahun terbit</dt>
+                <dd id="tahun_terbit" class="text-gray-900"></dd>
               </div>
 
               <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Resolution</dt>
-                <dd class="text-gray-900">72 x 72</dd>
+                <dt class="text-gray-500">Category</dt>
+                <dd id="genre" class="text-gray-900"></dd>
               </div>
             </dl>
           </div>
-          <div>
-            <h3 class="font-medium text-gray-900">Description</h3>
-            <div class="mt-2 flex items-center justify-between">
-              <p class="text-sm text-gray-500 italic">Add a description to this image.</p>
-              <button type="button" class="bg-white rounded-full h-8 w-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <!-- Heroicon name: solid/pencil -->
-                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                </svg>
-                <span class="sr-only">Add description</span>
-              </button>
+
+          <div class="flex justify-center">
+           <a id="edit" href=""><button type="button" class="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</button></a> 
+           <div class="" x-data="{open :false}">
+            <div class="flex justify center ml-4">
+              <button @click="open = true" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >Delete</button>
+            </div>
+            <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="open">
+              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            
+                <!-- This element is to trick the browser into centering the modal contents. -->
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            
+                <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                  <div class="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
+                    <button @click="open = false" type="button" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span class="sr-only">Close</span>
+                      <!-- Heroicon name: outline/x -->
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sm:flex sm:items-start">
+                    <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                      <!-- Heroicon name: outline/exclamation -->
+                      <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                      <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Deactivate account</h3>
+                      <div class="mt-2">
+                        <p class="text-sm text-gray-500">Are you sure you want to deactivate your account? All of your data will be permanently removed from our servers forever. This action cannot be undone.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                    <form id="delete" action="" method="post">
+                      @csrf
+                      @method('delete')
+                    <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete data</button>
+                    </form>
+                    <button @click="open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm">Cancel</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="flex">
-            <button type="button" class="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Download</button>
-            <button type="button" class="flex-1 ml-3 bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Delete</button>
           </div>
         </div>
       </aside>
@@ -358,6 +399,85 @@
 </div>
 
 
+@if(session()->has('success'))
+<div class="" x-data="{open : true}">
+  <button @click="open = true" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm invisible" >Close</button>
+  <div id="modalID" x-show="open" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+    <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+        <div>
+        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+            <!-- Heroicon name: outline/check -->
+            <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+        <div class="mt-3 text-center sm:mt-5">
+            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">{{ session('success') }}</h3>
+            <div class="mt-2">
+            <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+            </div>
+        </div>
+        </div>
+        <div class="mt-5 sm:mt-6">
+        <button @click="open = false" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm" >Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+@endif
+
+<script>
+
+  // function close() {
+  //   let close = document.getElementById('btn-close');
+  //   let info = document.getElementById('info');
+
+  //   close.classList.toggle('btn-close');
+  // }
+
+  function closeInfo() {
+    let info = document.getElementById('info');
+  info.classList.add('hidden')
+}
+
+function detailBuku(bukuId) {
+  let info = document.getElementById('info');
+  
+  
+  if (info.classList.contains('hidden')) {
+    info.classList.remove('hidden')
+  }
+    $.ajax({
+        url: '/admin/books/' + bukuId,
+        type: 'GET',
+        success: function(data) {
+          document.getElementById('buku-image').src = 'http://localhost:8000/storage/' + data.image
+          document.getElementById('buku-judul').innerHTML = data.judul
+          document.getElementById('buku-penulis').innerHTML = data.penulis
+          document.getElementById('buku-penerbit').innerHTML = data.penerbit
+          document.getElementById('created_at').innerHTML = data.created_at
+          document.getElementById('tahun_terbit').innerHTML = data.tahun_terbit
+          document.getElementById('genre').innerHTML = data.genre
+          document.getElementById('edit').href = '/admin/books/'+data.id+'/edit'
+          document.getElementById('delete').action = 'admin/books/'+data.id
+
+        }
+    });
+  }
+
+  function edit(bukuId) {
+    $.ajax({
+      url: '/admin/books/'+ bukuId+'/edit',
+      type: 'GET',
+      success: function(data) {
+        document.getElementById('edit').href = url
+      }
+    })
+  }
+</script>
 
 
 
