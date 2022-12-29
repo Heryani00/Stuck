@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 use App\Http\Requests\StoreBukuRequest;
 use App\Http\Requests\UpdateBukuRequest;
+use Illuminate\Support\Facades\Storage;
 
 class BukuController extends Controller
 {
@@ -29,6 +30,9 @@ class BukuController extends Controller
     public function create()
     {
         //
+        return view('admin.books.create', [
+            'buku' => Buku::all(),
+        ]);
     }
 
     /**
@@ -40,6 +44,23 @@ class BukuController extends Controller
     public function store(StoreBukuRequest $request)
     {
         //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'genre' => 'required',
+            'image' => 'image|file|max:2048',
+            'deskripsi' => 'required'
+        ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('buku-images');
+        }
+
+        Buku::create($validatedData);
+
+        return redirect('/admin')->with('success', 'new book have been added');
     }
 
     /**
@@ -48,9 +69,11 @@ class BukuController extends Controller
      * @param  \App\Models\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function show(Buku $buku)
+    public function show(Buku $buku, $id)
     {
         //
+        $buku = Buku::find($id);
+        return $buku;
     }
 
     /**
@@ -59,9 +82,13 @@ class BukuController extends Controller
      * @param  \App\Models\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function edit(Buku $buku)
+    public function edit(Buku $buku, $id)
     {
         //
+        $buku = Buku::find($id);
+        return view('admin.books.edit', [
+            'buku' => $buku
+        ]);
     }
 
     /**
@@ -71,9 +98,28 @@ class BukuController extends Controller
      * @param  \App\Models\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBukuRequest $request, Buku $buku)
+    public function update(UpdateBukuRequest $request, Buku $buku, $id)
     {
         //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'genre' => 'required',
+            'image' => 'image|file|max:2048',
+            'deskripsi' => 'required'
+        ]);
+
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('buku-images');
+        }
+        Buku::find($id)->update($validatedData);
+        return redirect('/admin')->with('success', ' data has been updated');
     }
 
     /**
@@ -82,8 +128,20 @@ class BukuController extends Controller
      * @param  \App\Models\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy(Buku $buku, $id)
     {
-        //
+        $buku = Buku::find($id);
+
+        if ($buku->image) {
+            Storage::delete($buku->image);
+        }
+        Buku::destroy($buku->id);
+        return back()->with('success', 'Data has been deleted');
+    }
+
+    public function getBuku(Buku $buku, $id)
+    {
+        $buku = Buku::find($id);
+        return $buku;
     }
 }
