@@ -85,6 +85,17 @@
               </div>
 
           </div>
+
+          <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+            <label for="file" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"> File </label>
+            <div class="mt-1 sm:mt-0 sm:col-span-2">
+              <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                <input type="hidden" name="oldFile" value="{{ $buku->file }}">
+              </span>
+              <input type="file" id="file" name="file" rows="3" class="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md" value="{{ $buku->file }}"></input>
+            </div>
+          </div>
+
         </div>
       </div>
             <!-- Button -------------->

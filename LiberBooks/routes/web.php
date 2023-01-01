@@ -1,8 +1,10 @@
 <?php
 
 use App\Models\Buku;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\BukuUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
@@ -37,6 +39,10 @@ Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/admin/books/getBuku', [BukuController::class, 'getBuku']);
 Route::resource('admin/books', BukuController::class);
+
+
+Route::get('allbooks/user/books/{id}', [BukuUserController::class, 'show']);
+Route::get('allbooks/user/books/download/{id}', [BukuUserController::class, 'download']);
 
 
 

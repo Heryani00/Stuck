@@ -18,7 +18,7 @@ class BukuController extends Controller
     {
         //
         return view('books', [
-            'buku' => Buku::latest()->paginate(10),
+            'buku' => Buku::all()->latest()->paginate(10),
         ]);
     }
 
@@ -51,11 +51,19 @@ class BukuController extends Controller
             'tahun_terbit' => 'required',
             'genre' => 'required',
             'image' => 'image|file|max:2048',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'file' => 'file|mimes:pdf|max:10240'
         ]);
+
+        $file = $request->file('file');
+
+        $filename = uniqid() . '.' . $file->extension();
 
         if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('buku-images');
+        }
+        if ($file) {
+            $validatedData['file'] = $file->storeAs('pdfs', $filename);
         }
 
         Buku::create($validatedData);
@@ -108,8 +116,21 @@ class BukuController extends Controller
             'tahun_terbit' => 'required',
             'genre' => 'required',
             'image' => 'image|file|max:2048',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'file' => 'file|max:10240',
         ]);
+
+        $file = $request->file('file');
+
+        $filename = uniqid() . '.' . $file->extension();
+
+
+        if ($file) {
+            if ($request->oldFile) {
+                Storage::delete($request->oldFile);
+            }
+            $validatedData['file'] = $file->storeAs('pdfs', $filename);
+        }
 
 
         if ($request->file('image')) {
