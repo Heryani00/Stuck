@@ -290,7 +290,7 @@
 
       <!-- Details sidebar -->
       <aside id="info" class="hidden w-96 bg-white p-8 border-l border-gray-200 overflow-y-auto">
-        <button onclick="closeInfo()" id="btn-close" class="btn-close bg-yellow-300">hahahahah</button>
+        <button onclick="closeInfo()" id="btn-close" class="btn-close bg-yellow-300">close</button>
         <div class="pb-16 space-y-6">
           <div>
             <div class="block w-full aspect-w-10 aspect-h-7 rounded-lg overflow-hidden">
@@ -468,15 +468,6 @@ function detailBuku(bukuId) {
     });
   }
 
-  function edit(bukuId) {
-    $.ajax({
-      url: '/admin/books/'+ bukuId+'/edit',
-      type: 'GET',
-      success: function(data) {
-        document.getElementById('edit').href = url
-      }
-    })
-  }
 </script>
 
 

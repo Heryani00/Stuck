@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('genre');
             $table->string('image')->nullable();
             $table->text('deskripsi');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
