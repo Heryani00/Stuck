@@ -3,10 +3,10 @@
 
 @section('container')
 <div class="" >
-  <div class="mx-4"  >
+  <div class="m-32 mt-12"  >
     <div class="mt-10">
-      <h3 class=" leading-6 font-medium text-pink-500">Account Setting</h3>
-      <p class="mt-1 max-w-2xl text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
+      <h1 class="leading-6 font-medium text-pink-500">Account Setting</h1>
+      <p class="mt-1 max-w-2xl text-sm text-gray-500">This section will be deleting your account and make it becomes inactive so be careful if you want to keep your account active.</p>
     </div>
     <div class="" x-data="{open :false}">
       <div class="flex justify-start mt-4">
@@ -60,13 +60,14 @@
       @csrf
       <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5"> 
         <div>
-    
+          <h2 class=" leading-6 font-medium">Reset Password</h2>
+          <p class="mt-1 max-w-2xl text-sm text-gray-500">This section will be changed your password if you forget it and want to reset the password, just make the new one and confirm it.</p>
           <div class="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
             <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
               <label for="oldpassword" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 "> Old Password </label>
               <div class="mt-1 sm:mt-0 sm:col-span-2">
                 <div class="max-w-lg flex rounded-md shadow-sm">
-                  <input type="password" name="current_password" id="oldpassword" autocomplete="oldpassword" class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300 @error('current_password') invalid:border-red-900 @enderror">
+                  <input type="password" name="current_password" id="oldpassword" autocomplete="oldpassword" class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300 @error('current_password') invalid:border-red-900 @enderror">
                 </div>
                 @error('current_password')
                 <div class="invalid-feedback text-red-800 ">
@@ -80,7 +81,7 @@
               <label for="newpassword" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">New Password </label>
               <div class="mt-1 sm:mt-0 sm:col-span-2">
                 <div class="max-w-lg flex rounded-md shadow-sm">
-                  <input type="password" name="new_password" id="newpassword" autocomplete="newpassword" class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300 @error('new_password') invalid:border-red-900 @enderror">
+                  <input type="password" name="new_password" id="newpassword" autocomplete="newpassword" class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300 @error('new_password') invalid:border-red-900 @enderror">
                   
                 </div>
                 @error('new_password')
@@ -90,16 +91,6 @@
               @enderror
               </div>
             </div>
-    
-            
-            {{-- <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-              <label for="about" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"> About </label>
-              <div class="mt-1 sm:mt-0 sm:col-span-2">
-                <textarea id="about" name="about" rows="3" class="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"></textarea>
-                <p class="mt-2 text-sm text-gray-500">Write a few sentences about yourself.</p>
-              </div>
-            </div> --}}
-    
   
           </div>
                   <div class="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
@@ -107,7 +98,7 @@
               <label for="confirm-password" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"> Confirm Password </label>
               <div class="mt-1 sm:mt-0 sm:col-span-2">
                 <div class="max-w-lg flex rounded-md shadow-sm">
-                  <input type="password" name="new_confirm_password" id="confirm-password" autocomplete="confirm-password" class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300 @error('new_confirm_password') invalid:border-red-900 @enderror">
+                  <input type="password" name="new_confirm_password" id="confirm-password" autocomplete="confirm-password" class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300 @error('new_confirm_password') invalid:border-red-900 @enderror">
                 </div>
                 @error('new_confirm_password')
                 <div class="invalid-feedback text-red-800 ">
@@ -116,11 +107,6 @@
               @enderror
               </div>
             </div>
-    
-            
-  
-    
-  
           </div>
         </div>
       </div>
@@ -129,7 +115,7 @@
       <div class="pt-5">
         <div class="flex justify-center">
           <a  href="/dashboard/profile"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button></a>
-          <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+          <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
           
 
           
