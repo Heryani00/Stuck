@@ -1,15 +1,17 @@
 <?php
 
 use App\Models\Buku;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\BukuController;
-use App\Http\Controllers\BukuUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BukuUserController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DeleteAccountController;
 use App\Http\Controllers\ChangePasswordController;
 
@@ -31,7 +33,20 @@ Route::get('/', function () {
 });
 Route::get('/allbooks', function () {
     return view('books', [
-        'buku' => Buku::latest()->paginate(10),
+        'buku' => Buku::latest()->Filter(request('category'))->paginate(8)->withQueryString()
+    ]);
+});
+
+Route::get('categories/{category:name}', function (Category $category) {
+    return view('books', [
+        'buku' => $category->buku->load('category'),
+
+    ]);
+});
+
+Route::get('/categories', function () {
+    return view('categories', [
+        'categories' => Category::all(),
     ]);
 });
 
@@ -39,6 +54,9 @@ Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/admin/books/getBuku', [BukuController::class, 'getBuku']);
 Route::resource('admin/books', BukuController::class);
+
+Route::get('/admin/category/getCategory', [AdminCategoryController::class, 'getCategory']);
+Route::resource('admin/category', AdminCategoryController::class);
 
 
 Route::get('allbooks/user/books/{id}', [BukuUserController::class, 'show']);
@@ -53,9 +71,7 @@ Route::get('/modal', function () {
     return view('component.modal');
 });
 
-Route::get('/categories', function () {
-    return view('categories');
-});
+
 
 
 
