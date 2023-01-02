@@ -52,7 +52,8 @@ class BukuController extends Controller
             'genre' => 'required',
             'image' => 'image|file|max:2048',
             'deskripsi' => 'required',
-            'file' => 'file|mimes:pdf|max:10240'
+            'file' => 'file|mimes:pdf|max:10240',
+            'category_id' => 'required',
         ]);
 
         $file = $request->file('file');
@@ -118,6 +119,7 @@ class BukuController extends Controller
             'image' => 'image|file|max:2048',
             'deskripsi' => 'required',
             'file' => 'file|max:10240',
+            'category_id' => 'required',
         ]);
 
         $file = $request->file('file');
