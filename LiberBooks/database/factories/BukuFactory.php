@@ -24,7 +24,8 @@ class BukuFactory extends Factory
             'genre' => $this->faker->sentence(mt_rand(1, 3)),
             'deskripsi' => collect($this->faker->paragraphs(mt_rand(1, 3)))
                 ->map(fn ($p) => "<p>$p</p>")
-                ->implode('')
+                ->implode(''),
+            'category_id' => mt_rand(1, 6)
         ];
     }
 }

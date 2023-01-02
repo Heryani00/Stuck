@@ -184,7 +184,7 @@
               </button>
             </form>
 
-            <a href="admin/books/create">
+            <a href="/admin/category/create">
             <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               <!-- Heroicon name: outline/plus-sm -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -240,18 +240,17 @@
           <section class="mt-8 pb-16" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading" class="sr-only">Book list</h2>
             <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-              @foreach ($buku as $b)
-              <li id="kons" class="relative" onclick="detailBuku({{ $b->id }})" >
+              @foreach ($categories as $c)
+              <li id="kons" class="relative" onclick="detailCategory({{ $c->id }})" >
                 <!-- Current: "ring-2 ring-offset-2 ring-indigo-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500" -->
                 <div class="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden">
                   <!-- Current: "", Default: "group-hover:opacity-75" -->
-                  <img data-id="{{ $b->id }}" src="{{ asset('storage/' . $b->image) }}" alt="" class="object-cover pointer-events-none image">
+                  <img data-id="{{ $c->id }}" src="{{ asset('storage/' . $c->image) }}" alt="" class="object-cover pointer-events-none image">
                   <button type="button" class="absolute inset-0 focus:outline-none">
-                    <span class="sr-only">View details for {{ $b->judul }}</span>
+                    <span class="sr-only">View details for {{ $c->name }}</span>
                   </button>
                 </div>
-                <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">{{ $b->judul }}</p>
-                <p class="block text-sm font-medium text-gray-500 pointer-events-none">{{ $b->penulis }}</p>
+                <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">{{ $c->name }}</p>
               </li>
 
               <!-- More files... -->
@@ -268,11 +267,11 @@
           <div>
             <div class="block w-full aspect-w-10 aspect-h-7 rounded-lg overflow-hidden">
               {{-- <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt="" class="object-cover"> --}}
-              <img id="buku-image" src="{{ asset('storage/1.jpg') }}" alt="" class="object-cover">
+              <img id="category-image" src="" alt="" class="object-cover">
             </div>
             <div class="mt-4 flex items-start justify-between">
               <div>
-                <h2 id="buku-judul" class="text-lg font-medium text-gray-900"></h2>
+                <h2 id="category-nama" class="text-lg font-medium text-gray-900"></h2>
                 <p class="text-sm font-medium text-gray-500">3.9 MB</p>
               </div>
               <button type="button" class="ml-4 bg-white rounded-full h-8 w-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -284,35 +283,7 @@
               </button>
             </div>
           </div>
-          <div>
-            <h3 class="font-medium text-gray-900">Information</h3>
-            <dl class="mt-2 border-t border-b border-gray-200 divide-y divide-gray-200">
-              <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Penulis</dt>
-                <dd id="buku-penulis" class="text-gray-900"></dd>
-              </div>
 
-              <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Uploaded at</dt>
-                <dd id="created_at" class="text-gray-900"></dd>
-              </div>
-
-              <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Penerbit</dt>
-                <dd id="buku-penerbit" class="text-gray-900"></dd>
-              </div>
-
-              <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Tahun terbit</dt>
-                <dd id="tahun_terbit" class="text-gray-900"></dd>
-              </div>
-
-              <div class="py-3 flex justify-between text-sm font-medium">
-                <dt class="text-gray-500">Category</dt>
-                <dd id="genre" class="text-gray-900"></dd>
-              </div>
-            </dl>
-          </div>
 
           <div class="flex justify-center">
            <a id="edit" href=""><button type="button" class="flex-1 bg-indigo-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</button></a> 
@@ -416,7 +387,7 @@
   info.classList.add('hidden')
 }
 
-function detailBuku(bukuId) {
+function detailCategory(categoryId) {
   let info = document.getElementById('info');
   
   
@@ -424,18 +395,13 @@ function detailBuku(bukuId) {
     info.classList.remove('hidden')
   }
     $.ajax({
-        url: '/admin/books/' + bukuId,
+        url: '/admin/category/' + categoryId,
         type: 'GET',
         success: function(data) {
-          document.getElementById('buku-image').src = 'http://localhost:8000/storage/' + data.image
-          document.getElementById('buku-judul').innerHTML = data.judul
-          document.getElementById('buku-penulis').innerHTML = data.penulis
-          document.getElementById('buku-penerbit').innerHTML = data.penerbit
-          document.getElementById('created_at').innerHTML = data.created_at
-          document.getElementById('tahun_terbit').innerHTML = data.tahun_terbit
-          document.getElementById('genre').innerHTML = data.genre
-          document.getElementById('edit').href = '/admin/books/'+data.id+'/edit'
-          document.getElementById('delete').action = 'admin/books/'+data.id
+          document.getElementById('category-image').src = 'http://localhost:8000/storage/' + data.image
+          document.getElementById('category-nama').innerHTML = data.name
+          document.getElementById('edit').href = '/admin/category/'+data.id+'/edit'
+          document.getElementById('delete').action = '/admin/category/'+data.id
 
         }
     });
