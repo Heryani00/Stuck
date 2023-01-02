@@ -8,9 +8,9 @@
         <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
           <div class="h-full border-gray-200">
             <!-- This example requires Tailwind CSS v2.0+ -->
-            <div class="">
-              <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">History in Category</h2>
-              <ul role="list" class="mt-3 grid grid-cols-3 gap-4">
+            <div class="px-20">
+              <h2 class="text-gray-500 text-xs font-medium uppercase tracking-wide">Category</h2>
+              <ul role="list" class="px-5 mt-3 grid grid-cols-3 gap-4">
                 <li class="col-span-1 flex shadow-sm rounded-md">
                   <div class="flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md">N</div>
                   <div class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
@@ -127,13 +127,13 @@
             <div class="flex justify-center">
               <!-- This example requires Tailwind CSS v2.0+ -->
               <div class="bg-white">
-                <div class="max-w-2xl mx-auto py-16 px-4 lg:max-w-7xl">
+                <div class="divide-y divide-gray-200 max-w-2xl mx-auto py-16 px-4 lg:max-w-7xl">
                   <div class="md:flex md:items-center md:justify-between">
-                    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">History Books Already Reads.</h2>
-                    <a href="#" class="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">Find More <span aria-hidden="true"> &rarr;</span></a>
+                    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">History Books Already Reads</h2>
+                    <a href="#" class="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">See More <span aria-hidden="true"> &rarr;</span></a>
                   </div>
     
-                  <div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
+                  <div class="divide-y divide-gray-200 mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
                     <div class="group relative p-5">
                       <div class="w-48 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80">
                         <img src="https://tailwindui.com/img/ecommerce-images/home-page-04-trending-product-02.jpg" alt="" class="w-48  object-center object-cover">
@@ -144,6 +144,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Novel</p>
                     </div>
                       
@@ -157,6 +158,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Magazine</p>
                     </div>
                       
@@ -170,6 +172,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Tale</p>
                     </div>
                       
@@ -183,6 +186,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Novel</p>
                     </div>
                       
@@ -196,6 +200,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Novel</p>
                     </div>
                       
@@ -209,6 +214,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Guide</p>
                     </div>
                       
@@ -222,6 +228,7 @@
                           Judul Buku
                         </a>
                       </h3>
+                      <p class="mt-1 text-sm text-gray-500">Nama Penulis</p>
                       <p class="mt-1 text-sm text-gray-500">Comic</p>
                     </div>
 
