@@ -11,42 +11,14 @@
     </div>
     <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
       <h1 class="mt-6 max-w-lg text-5xl font-semibold text-indigo-200 sm:max-w-3xl">Welcome to Open O-Library</h1>
-      <p class="mt-6 max-w-lg text-xl text-indigo-200 sm:max-w-3xl">Merupakan sebuah perpustakaan berbasis online yang menyediakan berbagai macam buku yang dapat diunduh secara gratis.</p>
+      <p class="mt-6 max-w-lg text-xl text-indigo-200 sm:max-w-3xl pb-5">Merupakan sebuah perpustakaan berbasis online yang menyediakan berbagai macam buku yang dapat diunduh secara gratis.</p>
+      <button class="flex content-center w-100 bg-[#dad7cd] hover:bg-[#ced4da] text-black hover:text-black-300 font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+        See Now
+      </button>
     </div>
   </div>
 </div>
-{{-- 
-<div class="pt-10 bg-orange-100 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
-  <div class="mx-auto max-w-7xl lg:px-8">
-    <div class="lg:grid lg:grid-cols-2 lg:gap-8">
-      <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
-        <div class="lg:py-24">
-          <a href="#" class="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
-            <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">LiberBooks</span>
-            <span class="ml-4 text-sm">Visit our careers page</span>
-            <!-- Heroicon name: solid/chevron-right -->
-            <svg class="ml-2 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-            <span class="block">Welcome to Open</span>
-            <span class="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">LiberBooks</span>
-          </h1>
-          <p class="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">Merupakan sebuah perpustakaan berbasis online yang menyediakan berbagai macam buku yang dapat diunduh secara gratis.</p>
-          <div class="mt-10 sm:mt-12">
-          </div>
-        </div>
-      </div>
-      <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-        <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-          <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
-          <img class="w-full rounded-lg lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"  src="http://localhost:8000/assets/img/4.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-</div> --}}
+
 <div class="bg-[url('/assets/2.jpg)]">
   <img class="bg-gradient-to-r" src="" alt="">
 </div>
@@ -54,9 +26,10 @@
 {{-- feature section --}}
       
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-amber-50 py-16 sm:py-24 lg:py-32">
-  <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-    <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Category</p>
+<div class="relative bg-amber-50 mt-6">
+  <div class="text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+    <p class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Category</p>
+    <span class="inline-flex h-1 w-40 rounded bg-indigo-500 mt-2"></span>
     <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">Berikut merupakan daftar category yang ada di O-Library</p>
     <div class="mt-12">
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,8 +37,8 @@
           <div class="flow-root rounded-lg bg-[#C7BCA1] px-6 pb-8 hover:bg-[#9F8772] group">
             <div class="-mt-6">
               <img width="100" class="rounded-lg mx-auto shadow-lg bg-[#C7BCA1] hover:scale-150" src="http://localhost:8000/assets/img/novel.png" alt="">
-              <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Novel</h3>
-              <p class="mt-5 text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Novel adalah karya sastra yang berbentuk prosa. Cerita dalam novel adalah sebuah karya imajinasi, membahas kehidupan seseorang atau berbagai karakter.</p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Novel</h3>
+              <p class="text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Novel adalah karya sastra yang berbentuk prosa. Cerita dalam novel adalah sebuah karya imajinasi, membahas kehidupan seseorang atau berbagai karakter.</p>
             </div>
           </div>
         </div>
@@ -75,8 +48,8 @@
           <div class="flow-root rounded-lg bg-[#C7BCA1] px-6 pb-8 hover:bg-[#9F8772] group">
             <div class="-mt-6">
               <img width="100" class="rounded-lg mx-auto shadow-lg bg-[#C7BCA1] hover:scale-150" src="http://localhost:8000/assets/img/majalah.png" alt="">
-              <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Magazine</h3>
-              <p class="mt-5 text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Majalah adalah publikasi yang dicetak di atas kertas menggunakan tinta dan diterbitkan secara berkala, Majalah tersebut memuat berbagai artikel dengan berbagai topik yang ditujukan untuk masyarakat umum dan ditulis dalam bahasa yang mudah dipahami banyak orang</p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Magazine</h3>
+              <p class="text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Majalah adalah memuat berbagai artikel dengan berbagai topik yang ditujukan untuk masyarakat umum dan ditulis dalam bahasa yang mudah dipahami banyak orang</p>
             </div>
           </div>
         </div>
@@ -85,8 +58,8 @@
           <div class="flow-root rounded-lg bg-[#C7BCA1] px-6 pb-8 hover:bg-[#9F8772] group">
             <div class="-mt-6">
               <img width="100" class="rounded-lg mx-auto shadow-lg bg-[#C7BCA1] hover:scale-150" src="http://localhost:8000/assets/img/kamus.png" alt="">
-              <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Dictionary</h3>
-              <p class="mt-5 text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Kamus adalah buku referensi untuk menjelaskan arti kata. Kamus membantu orang lain mengenali kata-kata baru. Selain menjelaskan arti kata, kamus juga dapat memiliki pedoman khusus, sumber kata (etimologi), dan contoh penggunaan kata.</p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Dictionary</h3>
+              <p class="text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Kamus adalah buku referensi untuk menjelaskan arti kata. Kamus juga dapat memiliki pedoman khusus, sumber kata (etimologi), dan contoh penggunaan kata.</p>
             </div>
           </div>
         </div>
@@ -95,8 +68,8 @@
           <div class="flow-root rounded-lg bg-[#C7BCA1] px-6 pb-8 hover:bg-[#9F8772] group">
             <div class="-mt-6">
               <img width="100" class="rounded-lg mx-auto shadow-lg bg-[#C7BCA1] hover:scale-150" src="http://localhost:8000/assets/img/komik.png" alt="">
-              <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Comic</h3>
-              <p class="mt-5 text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Komik adalah media untuk mengekspresikan ide melalui gambar, biasanya digabungkan dengan teks atau informasi visual lainnya.</p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Comic</h3>
+              <p class="text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Komik adalah media untuk mengekspresikan ide melalui gambar, biasanya digabungkan dengan teks atau informasi visual lainnya.</p>
             </div>
           </div>
         </div>
@@ -105,8 +78,8 @@
           <div class="flow-root rounded-lg bg-[#C7BCA1] px-6 pb-8 hover:bg-[#9F8772] group">
             <div class="-mt-6">
               <img width="100" class="rounded-lg mx-auto shadow-lg bg-[#C7BCA1] hover:scale-150" src="http://localhost:8000/assets/img/dongeng.png" alt="">
-              <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Fairytale</h3>
-              <p class="mt-5 text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Dongeng adalah salah satu jenis karya sastra kuno yang mengandung cerita luar biasa dan imajiner (fiksi) yang dianggap masyarakat umum sebagai cerita yang tidak benar-benar terjadi.</p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Fairytale</h3>
+              <p class="text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Dongeng merupakan jenis karya sastra kuno yang mengandung cerita imajiner yang dianggap masyarakat umum sebagai cerita fiksi.</p>
             </div>
           </div>
         </div>
@@ -115,8 +88,9 @@
           <div class="flow-root rounded-lg shadow-md bg-[#C7BCA1] px-6 pb-8 hover:bg-[#9F8772] group">
             <div class="-mt-6">
               <img width="100" class="rounded-lg mx-auto shadow-lg bg-[#C7BCA1] hover:scale-150" src="http://localhost:8000/assets/img/panduan.png" alt="">
-              <h3 class="mt-8 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Guide</h3>
-              <p class="mt-5 text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Buku panduan (how to) merupakan jenis buku yang berisi tentang sebuah petunjuk. Ciri paling ketara dari jenis buku ini adalah menjelaskan tentang sebuah cara atau tutorial.</p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight text-gray-900 group-hover:text-white">Guide</h3>
+              <p class="text-base text-gray-500 group-hover:text-white selection:bg-[#FFF8EA] selection:text-slate-900">Buku panduan (how to) merupakan jenis buku yang menjelaskan tentang sebuah cara atau tutorial.</p>
+              
             </div>
           </div>
         </div>
@@ -127,81 +101,185 @@
 
 
  <!-- Testimonial section -->
- <section class="bg-[#C7BCA1]">
-  <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-    <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-indigo-900 lg:pr-16">
-      <div class="md:flex-shrink-0">
-        <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple">
-      </div>
-      <blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
-        <div class="relative text-lg font-medium text-white md:flex-grow">
-          <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-          </svg>
-          <p class="relative">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.</p>
-        </div>
-        <footer class="mt-8">
-          <div class="flex items-start">
-            <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-              <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            </div>
-            <div class="ml-4">
-              <div class="text-base font-medium text-white">Judith Black</div>
-              <div class="flex items-center">
-                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </blockquote>
+<section>
+  <div class="container mx-auto p-10">
+    <div class="text-center">
+      <h1 class="text-3xl font-extrabold">Testimonial</h1>
+      <span class="inline-flex h-1 w-40 rounded bg-indigo-500 mt-2"></span>
+
     </div>
-    <div class="py-12 px-4 border-t-2 border-indigo-900 sm:px-6 md:py-16 md:pr-0 md:pl-10 md:border-t-0 md:border-l lg:pl-16">
-      <div class="md:flex-shrink-0">
-        <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Workcation">
+    <div class="flex p-5">
+      <div class="h-full text-center ml-5 p-5 bg-gray-300 hover:bg-gray-200 rounded-2xl">
+        <img class="h-24 w-24 object-cover rounded-full inline-block border-2 border-gray-700 bg-opacity-10 items-center justify-center" src="http://localhost:8000/assets/img/Charactor1.png" alt="">
+        <svg class="absolute top-0 left-0 transform-translate-x-3 -translate-y-2 h-8 w-8 text-gray-600 hover:scale-150" fill="currentColor" class="block text-yellow-500 w-5 h-5" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+        </svg>
+
+        <p class="leading-relaxed">Sangat membantu dalam mengakses informasi buku bacaan berkualitas secara fleksibel tanpa terbatas oleh ruang dan waktu.</p>
+        <span class="inline-flex h-1 w-14 rounded bg-indigo-500 mt-4 mb-2"></span>
+        <h2 class="title-font font-medium text-sm tracking-wider">Putra</h2>
+        <p class="text-gray-500">Mahasiswa</p>
+        <ul class="flex justify-center mb-0">
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half-alt"
+              class="w-4 text-yellow-500" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 512">
+              <path fill="currentColor"
+                d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z">
+              </path>
+            </svg>
+          </li>
+        </ul>
       </div>
-      <blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
-        <div class="relative text-lg font-medium text-white md:flex-grow">
-          <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600" fill="currentColor" viewBox="0 0 32 32">
-            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+      <div class="h-full text-center ml-5 p-5 bg-gray-300 hover:bg-gray-200 rounded-2xl">
+        <img class="h-24 w-24 object-cover rounded-full inline-block border-2 border-gray-700 bg-opacity-10 items-center justify-center" src="http://localhost:8000/assets/img/Charactor2.png" alt="">
+        <svg class="absolute top-0 left-0 transform-translate-x-3 -translate-y-2 h-8 w-8 text-gray-600 hover:scale-150" fill="currentColor" class="block text-yellow-500 w-5 h-5" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+        </svg>
+
+        <p class="leading-relaxed">Dengan adanya perpustakaan digital ini lebih memudahkan dan juga lebih praktis.</p>
+        <span class="inline-flex h-1 w-14 rounded bg-indigo-500 mt-4 mb-2"></span>
+        <h2 class="title-font font-medium text-sm tracking-wider">Putra</h2>
+        <p class="text-gray-500">Mahasiswa</p>
+        <ul class="flex justify-center mb-0">
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half-alt"
+              class="w-4 text-yellow-500" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 512">
+              <path fill="currentColor"
+                d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z">
+              </path>
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <div class="h-full text-center ml-5 p-5 bg-gray-300 hover:bg-gray-200 rounded-2xl">
+        <img class="h-24 w-24 object-cover rounded-full inline-block border-2 border-gray-700 bg-opacity-10 items-center justify-center" src="http://localhost:8000/assets/img/Charactor3.png" alt="">
+         <svg class="absolute top-0 left-0 transform-translate-x-3 -translate-y-2 h-8 w-8 text-gray-600 hover:scale-150" fill="currentColor" class="block text-yellow-500 w-5 h-5" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+        </svg>
+
+        <p class="leading-relaxed">Wesbite perpustakaannya keren, buku yang tersedia cukup lengkap dan cukup banyak genre yang tersedia.</p>
+        <span class="inline-flex h-1 w-14 rounded bg-indigo-500 mt-4 mb-2"></span>
+        <h2 class="title-font font-medium text-sm tracking-wider">Dio</h2>
+        <p class="text-gray-500">Mahasiswa</p>
+        <ul class="flex justify-center mb-0">
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path fill="currentColor"
+                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+              </path>
+            </svg>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half-alt"
+            class="w-4 text-yellow-500" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 512">
+            <path fill="currentColor"
+              d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z">
+            </path>
           </svg>
-          <p class="relative">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis. Nemo expedita voluptas culpa sapiente alias molestiae.</p>
-        </div>
-        <footer class="mt-8">
-          <div class="flex items-start">
-            <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-              <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            </div>
-            <div class="ml-4">
-              <div class="text-base font-medium text-white">Joseph Rodriguez</div>
-              <div class="flex items-center">
-              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            </div>
-            </div>
-          </div>
-        </footer>
-      </blockquote>
+          </li>
+          <li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half-alt"
+              class="w-4 text-yellow-500" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 512">
+              <path fill="currentColor"
+                d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z">
+              </path>
+            </svg>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-
 <!-- Blog section -->
-<div class="relative bg-amber-50 py-16 sm:py-24 lg:py-32">
+<div class="relative bg-amber-50 py-5">
   <div class="relative">
-    <div class="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-      <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Trending Books</p>
+    <div class="text-center mx-auto max-w-md sm:max-w-3xl sm:px-6">
+      <p class="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Trending Books</p>
+      <span class="inline-flex h-1 w-40 rounded bg-indigo-500 mt-2"></span>
       <p class="mt-5 mx-auto max-w-prose text-xl text-gray-500">Berikut merupakan beberapa buku yang sering dibaca atau di download oleh user</p>
     </div>
-    
-    
     <div class="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
       @foreach($buku as $b)
       <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
@@ -241,7 +319,9 @@
 
   </div>
   <div class="flex justify-center mt-10">
-    <a href="/allbooks"><button type="button" class=" inline-flex rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">Read More</button></a>
+    <button class="flex content-center w-100 bg-[#dad7cd] hover:bg-[#ced4da] text-black hover:text-black-300 font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded rounded-md">
+      See More
+    </button>
   </div>
 </div>
 @include('layouts.footer')
