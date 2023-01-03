@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\DB;
 
 class BukuUserController extends Controller
 {
@@ -18,7 +20,27 @@ class BukuUserController extends Controller
 
     public function show(Buku $buku, $id)
     {
+        $userId = auth()->id();
         $buku = Buku::find($id);
+        $ids = DB::table('favorites')->where('user_id', $userId)->select('buku_id')->pluck('buku_id')->toArray();
+        $array = implode(',', $ids);
+        $selected = explode(',', $array);
+        $collect = collect($selected);
+
+        $b = [];
+        $bu = Buku::all();
+        foreach ($bu as $bi) {
+            $b[] = $collect->contains($bi->id);
+            // dd($b);
+        }
+
+
+
+        // return view('component.show', [
+        //     'buku' => $buku,
+        //     'isFavorited' => $isFavorited
+        // ]);
+        // return compact('buku', 'isFavorited');
         return $buku;
         // code to handle request to show a specific resource
     }
