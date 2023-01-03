@@ -112,7 +112,7 @@ Route::get('/favorite', function () {
     return view('dashboard.favorite', [
         'favorite' => Favorite::all()
     ]);
-});
+})->name('favorite.index');
 
 
 //profile

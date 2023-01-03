@@ -17,7 +17,7 @@ class AdminCategoryController extends Controller
     {
         //
         return view('admin.category', [
-            'categories' => Category::all(),
+            'categories' => Category::latest()->paginate(8)->withQueryString(),
         ]);
     }
 

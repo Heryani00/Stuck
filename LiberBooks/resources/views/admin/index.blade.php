@@ -1,75 +1,11 @@
 
 @extends('admin.layouts.main')
 @section('container')
-
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
-<!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-50">
-  <body class="h-full overflow-hidden">
-  ```
--->
 <div class="h-full flex">
-  <!-- Narrow sidebar -->
-
-
-  <!--
-    Mobile menu
-
-    Off-canvas menu for mobile, show/hide based on off-canvas menu state.
-  -->
   <div class="fixed inset-0 z-40 flex md:hidden" role="dialog" aria-modal="true">
-    <!--
-      Off-canvas menu overlay, show/hide based on off-canvas menu state.
-
-      Entering: "transition-opacity ease-linear duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "transition-opacity ease-linear duration-300"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
     <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
 
-    <!--
-      Off-canvas menu, show/hide based on off-canvas menu state.
-
-      Entering: "transition ease-in-out duration-300 transform"
-        From: "-translate-x-full"
-        To: "translate-x-0"
-      Leaving: "transition ease-in-out duration-300 transform"
-        From: "translate-x-0"
-        To: "-translate-x-full"
-    -->
     <div class="relative max-w-xs w-full bg-indigo-700 pt-5 pb-4 flex-1 flex flex-col">
-      <!--
-        Close button, show/hide based on off-canvas menu state.
-
-        Entering: "ease-in-out duration-300"
-          From: "opacity-0"
-          To: "opacity-100"
-        Leaving: "ease-in-out duration-300"
-          From: "opacity-100"
-          To: "opacity-0"
-      -->
       <div class="absolute top-1 right-0 -mr-14 p-1">
         <button type="button" class="h-12 w-12 rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white">
           <!-- Heroicon name: outline/x -->
@@ -184,16 +120,6 @@
                 <span>Logout</span>
               </button>
             </form>
-
-            <a href="admin/books/create">
-            <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <!-- Heroicon name: outline/plus-sm -->
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-              <span class="sr-only">Add file</span>
-            </button>
-            </a>
           </div>
         </div>
       </div>
@@ -259,12 +185,20 @@
               @endforeach
             </ul>
           </section>
+
+          <!-- This example requires Tailwind CSS v2.0+ -->
+          
+
         </div>
       </main>
 
       <!-- Details sidebar -->
       <aside id="info" class="hidden w-96 bg-white p-8 border-l border-gray-200 overflow-y-auto">
-        <button onclick="closeInfo()" id="btn-close" class="btn-close bg-yellow-300">close</button>
+        <button onclick="closeInfo()" id="btn-close" class="btn-close">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-gray-500 hover:text-gray-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>          
+        </button>
         <div class="pb-16 space-y-6">
           <div>
             <div class="block w-full aspect-w-10 aspect-h-7 rounded-lg overflow-hidden">
@@ -277,10 +211,6 @@
                 <p class="text-sm font-medium text-gray-500">3.9 MB</p>
               </div>
               <button type="button" class="ml-4 bg-white rounded-full h-8 w-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <!-- Heroicon name: outline/heart -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
                 <span class="sr-only">Favorite</span>
               </button>
             </div>
@@ -443,6 +373,19 @@ function detailBuku(bukuId) {
   }
 
 </script>
+
+<nav class="mb-10 flex items-center justify-between border-t border-gray-200 px-4 sm:px-0">
+  <div class="-mt-px flex w-0 flex-1">
+    <a href="#" class="inline-flex items-center border-t-2 border-transparent pt-4 pr-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+  </div>
+  <div class="hidden md:-mt-px md:flex">
+    <a href="#" class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"></a>
+    <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+    {{ $buku->links() }}
+    </a>
+  </div>
+</nav>
+
 
 
 
