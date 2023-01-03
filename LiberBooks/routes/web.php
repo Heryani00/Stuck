@@ -96,6 +96,10 @@ Route::get('/modal', function () {
 
 
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 
 //login
