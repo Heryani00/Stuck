@@ -36,7 +36,7 @@ $user = Auth::user();
         @auth
           <form action="/logout" method="post" class="pt-4">
             @csrf
-            <button type="submit" class=" bg-green-300 text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <button type="submit" class=" bg-gray-900 text-white hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
               <!-- Heroicon name: solid/plus-sm -->
                 <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
               </svg>
@@ -71,7 +71,7 @@ $user = Auth::user();
 
         @else
         <div class="flex-shrink-0">
-          <a href="/login"><button type="button" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <a href="/login"><button type="button" class="bg-gray-900 text-white hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
             <!-- Heroicon name: solid/plus-sm -->
               <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
             </svg>
