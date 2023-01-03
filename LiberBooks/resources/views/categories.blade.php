@@ -13,7 +13,7 @@
         <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
           @foreach($categories as $category)
           <li>
-            <a href="categories/{{ $category->name }}">
+            <a href="/allbooks?category={{ $category->name }}">
             <div class="space-y-4">
               <div class="aspect-w-3 aspect-h-2">
                 <img class="object-cover shadow-lg rounded-lg" src="{{ asset('storage/' . $category->image) }}" alt="">

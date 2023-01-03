@@ -19,7 +19,7 @@ class AdminController extends Controller
     {
         if (Auth::user()->Type == 'admin') {
             return view('admin.index', [
-                'buku' => Buku::All()
+                'buku' => Buku::latest()->filter(request(['search', 'category']))->paginate(12)->withQueryString()
             ]);
         } else {
             abort(403);

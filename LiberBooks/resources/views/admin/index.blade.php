@@ -156,7 +156,7 @@
  
         <div class="flex-1 flex justify-between px-4 sm:px-6">
           <div class="flex-1 flex">
-            <form class="w-full flex md:ml-0" action="#" method="GET">
+            <form class="w-full flex md:ml-0" action="/admin">
               <label for="desktop-search-field" class="sr-only">Search all files</label>
               <label for="mobile-search-field" class="sr-only">Search all files</label>
               <div class="relative w-full text-gray-400 focus-within:text-gray-600">
@@ -166,8 +166,9 @@
                     <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                   </svg>
                 </div>
-                <input name="mobile-search-field" id="mobile-search-field" class="h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:hidden" placeholder="Search" type="search">
-                <input name="desktop-search-field" id="desktop-search-field" class="hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:block" placeholder="Search all files" type="search">
+                <input type="text" name="search" name="mobile-search-field" id="mobile-search-field" class="h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:hidden" placeholder="Search Books ..." value="{{ request('search') }}">
+                <input type="text" name="search" name="desktop-search-field" id="desktop-search-field" class="hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:block" placeholder="Search Books ..."  value="{{ request('search') }}">
+                <button type="submit"></button>
               </div>
             </form>
           </div>

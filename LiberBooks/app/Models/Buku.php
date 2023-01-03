@@ -13,14 +13,16 @@ class Buku extends Model
     protected $with = ['category',];
     protected $table = 'bukus';
 
-    public function scopeFilter($query)
+    public function scopeFilter($query, array $filters)
     {
-
+        $query->when(($filters['search']) ?? false, function ($query, $search) {
+            return $query->where('judul', 'like', '%' . $search . '%');
+        });
 
 
         $query->when($filters['category'] ?? false, function ($query, $category) {
             return $query->whereHas('category', function ($query) use ($category) {
-                $query->where('name ', $category);
+                $query->where('name', $category);
             });
         });
     }

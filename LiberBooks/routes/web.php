@@ -35,6 +35,9 @@ Route::get('/', function () {
         'buku' => Buku::paginate(3),
     ]);
 });
+
+Route::get('/allbooks', [BukuController::class, 'index']);
+
 Route::get('/allbooks', function () {
     $userId = auth()->id();
     $ids = DB::table('favorites')->where('user_id', $userId)->select('buku_id')->pluck('buku_id')->toArray();

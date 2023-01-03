@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buku;
+use App\Models\Category;
 use App\Http\Requests\StoreBukuRequest;
 use App\Http\Requests\UpdateBukuRequest;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +18,12 @@ class BukuController extends Controller
     public function index()
     {
         //
+        if (request('category')) {
+            $category = Category::firstWhere('name', request('category'));
+        }
+
         return view('books', [
-            'buku' => Buku::all()->latest()->paginate(10),
+            'buku' => Buku::latest()->filter(request(['search', 'category']))->paginate(8)->withQueryString()
         ]);
     }
 

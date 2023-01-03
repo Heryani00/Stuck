@@ -4,11 +4,8 @@
 
 
 
-{{-- @if ($clicked == true)
-    <p>Gambar telah diklik</p>
-@else
-    <p>Gambar belum diklik</p>
-@endif --}}
+
+
 
 
       {{-- session --}}
@@ -76,9 +73,31 @@
 
 
 
+
 <div class="" x-data="{ open: false }">
     <div class="bg-white" >
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+          
+          <form class="w-full flex md:ml-0" action="/allbooks">
+            @if (request('category'))
+            <input type="hidden" name="category" value="{{ request('category') }}"> 
+            @endif
+
+            <label for="desktop-search-field" class="sr-only">Search all files</label>
+            {{-- <label for="mobile-search-field" class="sr-only">Search all files</label> --}}
+            <div class="relative w-full text-gray-400 focus-within:text-gray-600">
+              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center">
+                <!-- Heroicon name: solid/search -->
+                <svg class="flex-shrink-0 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <input type="text" name="search" name="mobile-search-field" id="mobile-search-field" class="h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:hidden" placeholder="Search Books ..." type="search" value="{{ request('search') }}">
+              <input type="text" name="search" name="desktop-search-field" id="desktop-search-field" class="hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400 sm:block" placeholder="Search Books ..."   type="search" value="{{ request('search') }}">
+              <button type="submit"></button>
+            </div>
+          </form>
+
           <h2 class="sr-only">Products</h2>
           <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
               @foreach($buku as $b)
