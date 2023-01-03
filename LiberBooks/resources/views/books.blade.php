@@ -181,14 +181,11 @@
                                       <button type="submit" class="ml-4 bg-white rounded-full h-8 w-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 like-button">
                                         <!-- like -->
                                         {{-- @if ($ids->contains($bb)) --}}
-                                        @php
-                                            $count = 0;
-                                        @endphp
     
                                         {{-- <svg id="love" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                         </svg> --}}
-                                        <svg id="love" class="{{ $ids->contains($b->id) ? 'h-6 w-6 text-red-600' : 'h-6 w-6' }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <svg id="love" class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                         </svg>
     
@@ -211,14 +208,12 @@
                                     <button type="submit" class="ml-4 bg-white rounded-full h-8 w-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 like-button">
                                       <!-- like -->
                                       {{-- @if ($ids->contains($bb)) --}}
-                                      @php
-                                          $count = 0;
-                                      @endphp
+
   
                                       {{-- <svg id="love" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                       </svg> --}}
-                                      <svg id="love" class="{{ $ids->contains($b->id) ? 'h-6 w-6 text-red-600' : 'h-6 w-6' }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                      <svg id="love" class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                       </svg>
   
@@ -308,7 +303,6 @@
           document.getElementById('favorit-delete').value = data.id
           document.getElementById('read').href = 'http://localhost:8000/storage/' + data.file
           document.getElementById('download').href = 'allbooks/user/books/download/' + data.id
-          document.getElementById('love').class = "{{ $ids->contains("+data.id+")  ? 'h-6 w-6 text-red-600' : 'h-6 w-6' }}" 
           
 
         //   var isFavorited = data.isFavorited

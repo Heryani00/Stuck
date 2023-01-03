@@ -22,6 +22,7 @@ class BukuController extends Controller
             $category = Category::firstWhere('name', request('category'));
         }
 
+
         return view('books', [
             'buku' => Buku::latest()->filter(request(['search', 'category']))->paginate(8)->withQueryString()
         ]);

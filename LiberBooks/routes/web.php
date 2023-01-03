@@ -38,27 +38,6 @@ Route::get('/', function () {
 
 Route::get('/allbooks', [BukuController::class, 'index']);
 
-Route::get('/allbooks', function () {
-    $userId = auth()->id();
-    $ids = DB::table('favorites')->where('user_id', $userId)->select('buku_id')->pluck('buku_id')->toArray();
-    $array = implode(',', $ids);
-    $selected = explode(',', $array);
-    $collect = collect($selected);
-
-    $b = [];
-    $bu = Buku::all();
-    foreach ($bu as $bi) {
-        $b[] = $collect->contains($bi->id);
-        // dd($b);
-    }
-
-    // dd($b);
-    return view('books', [
-        'buku' => Buku::latest()->Filter(request('category'))->paginate(8)->withQueryString(),
-        'ids' => $collect,
-        'bb' => $b,
-    ]);
-});
 
 Route::get('categories/{category:name}', function (Category $category) {
     return view('books', [

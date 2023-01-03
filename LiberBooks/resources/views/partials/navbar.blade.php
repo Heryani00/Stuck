@@ -29,7 +29,7 @@ $user = Auth::user();
 
           <a href="/categories" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Category</a>
 
-          <a href="#" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="/about" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
         </div>
       </div>
       <div class="flex items-center justify-center my-auto">
