@@ -34,6 +34,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function Favorite()
+    {
+        return $this->belongsTo(Favorite::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
