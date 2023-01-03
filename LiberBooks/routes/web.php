@@ -1,12 +1,14 @@
 <?php
 
 use App\Models\Buku;
+use App\Models\Favorite;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BukuUserController;
@@ -14,6 +16,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DeleteAccountController;
 use App\Http\Controllers\ChangePasswordController;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +35,30 @@ Route::get('/', function () {
         'buku' => Buku::paginate(3),
     ]);
 });
+
 Route::get('/allbooks', [BukuController::class, 'index']);
+
+Route::get('/allbooks', function () {
+    $userId = auth()->id();
+    $ids = DB::table('favorites')->where('user_id', $userId)->select('buku_id')->pluck('buku_id')->toArray();
+    $array = implode(',', $ids);
+    $selected = explode(',', $array);
+    $collect = collect($selected);
+
+    $b = [];
+    $bu = Buku::all();
+    foreach ($bu as $bi) {
+        $b[] = $collect->contains($bi->id);
+        // dd($b);
+    }
+
+    // dd($b);
+    return view('books', [
+        'buku' => Buku::latest()->Filter(request('category'))->paginate(8)->withQueryString(),
+        'ids' => $collect,
+        'bb' => $b,
+    ]);
+});
 
 Route::get('categories/{category:name}', function (Category $category) {
     return view('books', [
@@ -39,6 +66,9 @@ Route::get('categories/{category:name}', function (Category $category) {
 
     ]);
 });
+
+Route::post('/favorites', [FavoriteController::class, 'store']);
+Route::delete('/favorites', [FavoriteController::class, 'destroy']);
 
 Route::get('/categories', function () {
     return view('categories', [
@@ -69,6 +99,10 @@ Route::get('/modal', function () {
 
 
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 
 //login
@@ -96,7 +130,9 @@ Route::get('/dashboard', [UserController::class, 'index']);
 
 // favorite
 Route::get('/favorite', function () {
-    return view('dashboard.favorite');
+    return view('dashboard.favorite', [
+        'favorite' => Favorite::all()
+    ]);
 });
 
 

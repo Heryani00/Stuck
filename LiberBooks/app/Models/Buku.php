@@ -11,6 +11,7 @@ class Buku extends Model
 
     protected $guarded = ['id'];
     protected $with = ['category',];
+    protected $table = 'bukus';
 
     public function scopeFilter($query, array $filters)
     {
@@ -29,5 +30,10 @@ class Buku extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function Favorite()
+    {
+        return $this->hasMany(Favorite::class);
     }
 }
