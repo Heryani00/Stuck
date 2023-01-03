@@ -2,11 +2,11 @@
     <div class="flex items-center border-b border-gray-200">
       <nav class="flex-1 -mb-px flex space-x-6 xl:space-x-8" aria-label="Tabs">
         <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
-        <a href="/admin" aria-current="page" class="border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Book lists </a>
+        <a href="/admin" aria-current="page" class="{{ Request::is('admin') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500' }} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Book lists </a>
 
-        <a href="/admin/category" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Category </a>
+        <a href="/admin/category" class="{{ Request::is('admin/category') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500' }} hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Category </a>
 
-        <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Favorited </a>
+        <a href="#" class="{{ Request::is('admin/favorited') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500' }} text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Favorited </a>
       </nav>
       <div class="hidden ml-6 bg-gray-100 p-0.5 rounded-lg items-center sm:flex">
         <button type="button" class="p-1.5 rounded-md text-gray-400 hover:bg-white hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

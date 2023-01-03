@@ -23,13 +23,13 @@ $user = Auth::user();
         </div>
         <div class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+          <a href="/" class="{{ Request::is('/') ? 'bg-gray-900 text-white' : '' }} hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
 
-          <a href="/allbooks" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">AllBooks</a>
+          <a href="/allbooks" class="{{ Request::is('allbooks') ? 'bg-gray-900 text-white' : '' }} text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">AllBooks</a>
 
-          <a href="/categories" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Category</a>
+          <a href="/categories" class="{{ Request::is('categories') ? 'bg-gray-900 text-white' : '' }} text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Category</a>
 
-          <a href="/about" class="text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="/about" class="{{ Request::is('about') ? 'bg-gray-900 text-white' : '' }} text-white-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
         </div>
       </div>
       <div class="flex items-center justify-center my-auto">
