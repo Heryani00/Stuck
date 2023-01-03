@@ -31,11 +31,7 @@ Route::get('/', function () {
         'buku' => Buku::paginate(3),
     ]);
 });
-Route::get('/allbooks', function () {
-    return view('books', [
-        'buku' => Buku::latest()->Filter(request('category'))->paginate(8)->withQueryString()
-    ]);
-});
+Route::get('/allbooks', [BukuController::class, 'index']);
 
 Route::get('categories/{category:name}', function (Category $category) {
     return view('books', [
