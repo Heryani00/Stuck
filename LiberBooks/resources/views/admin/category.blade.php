@@ -183,16 +183,6 @@
                 <span>Logout</span>
               </button>
             </form>
-
-            <a href="/admin/category/create">
-            <button type="button" class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <!-- Heroicon name: outline/plus-sm -->
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-              <span class="sr-only">Add file</span>
-            </button>
-            </a>
           </div>
         </div>
       </div>
@@ -233,7 +223,26 @@
                 <option>Favorited</option>
               </select>
             </div>
-            @include('admin.layouts.navbar')
+            <div class="hidden sm:block">
+              <div class="flex items-center border-b border-gray-200">
+                <nav class="flex-1 -mb-px flex space-x-6 xl:space-x-8" aria-label="Tabs">
+                  <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+                  <a href="/admin" aria-current="page" class="{{ Request::is('admin') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500' }} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Book lists </a>
+          
+                  <a href="/admin/category" class="{{ Request::is('admin/category') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500' }} hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Category </a>
+          
+                  <a href="#" class="{{ Request::is('admin/favorited') ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500' }} text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Favorited </a>
+                </nav>
+                <div class="hidden ml-6 p-0.5 rounded-lg items-center sm:flex">
+                  <a href="{{ route('category.create') }}" class="ml-0.5 p-1.5 rounded-md shadow-sm text-[#8B7E74] hover:text-amber-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+                      <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z" clip-rule="evenodd" />
+                    </svg>                    
+                    <span class="sr-only">Use grid view</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Gallery -->
@@ -409,6 +418,18 @@ function detailCategory(categoryId) {
 
 </script>
 
+
+<nav class="mb-10 flex items-center justify-between border-t border-gray-200 px-4 sm:px-0">
+  <div class="-mt-px flex w-0 flex-1">
+    <a href="#" class="inline-flex items-center border-t-2 border-transparent pt-4 pr-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+  </div>
+  <div class="hidden md:-mt-px md:flex">
+    <a href="#" class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"></a>
+    <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+    {{ $categories->links() }}
+    </a>
+  </div>
+</nav>
 
 
 

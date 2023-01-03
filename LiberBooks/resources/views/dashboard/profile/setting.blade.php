@@ -1,8 +1,7 @@
 @extends('dashboard.layouts.main')
-@include('dashboard.layouts.sidebar')
 
 @section('container')
-<div class="" >
+<div class="">
   <div class="m-32 mt-12"  >
     <div class="mt-10">
       <h1 class="leading-6 font-medium text-pink-500">Account Setting</h1>

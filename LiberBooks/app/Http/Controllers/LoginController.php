@@ -31,7 +31,7 @@ class LoginController extends Controller
                 return redirect()->intended('/admin');
             } else if (Auth::user()->Type == 'user') {
 
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/favorite');
             }
         }
 
@@ -77,7 +77,7 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return redirect('/dashboard');
+        return redirect('/favorite');
     }
     public function fbCallback()
     {
@@ -97,6 +97,6 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return redirect('/dashboard');
+        return redirect('/favorite');
     }
 }

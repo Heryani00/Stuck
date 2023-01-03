@@ -1,5 +1,4 @@
 @extends('dashboard.layouts.main')
-@include('dashboard.layouts.sidebar')
 
 @section('container')
 
